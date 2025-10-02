@@ -1,1 +1,306 @@
-test: 1759396981
+# System Information
+os: Ubuntu
+os_family: Debian
+oscodename: jammy
+osrelease: 22.04
+osfullname: Ubuntu
+osarch: x86_64
+osmajorrelease: 22
+osrelease_info: [22, 4]
+kernel: Linux
+kernelrelease: 5.15.0-89-generic
+kernelversion: '#99-Ubuntu SMP Mon Oct 30 20:42:41 UTC 2023'
+
+# Hardware Information
+num_cpus: 8
+cpu_model: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
+mem_total: 16384
+virtual: kvm
+manufacturer: Amazon EC2
+productname: t3.xlarge
+serialnumber: ec2-instance-12345
+uuid: ec2a1b2c-3d4e-5f6a-7b8c-9d0e1f2a3b4c
+
+# Network Configuration
+fqdn: web-server-01.prod.example.com
+host: web-server-01
+domain: prod.example.com
+ip_interfaces:
+  lo: ['127.0.0.1']
+  eth0: ['10.0.1.45']
+  eth1: ['10.0.2.89']
+ip4_interfaces:
+  lo: ['127.0.0.1']
+  eth0: ['10.0.1.45']
+  eth1: ['10.0.2.89']
+ip6_interfaces:
+  lo: ['::1']
+  eth0: ['fe80::a4d:3ff:fe45:678']
+ipv4: ['10.0.1.45', '127.0.0.1']
+ipv6: ['::1', 'fe80::a4d:3ff:fe45:678']
+
+# Application Configuration
+app_name: payment-api
+app_version: 3.4.2
+app_port: 8080
+app_environment: production
+app_tier: backend
+app_language: java
+app_framework: spring-boot
+app_jvm_version: 17.0.8
+app_heap_size: 4096m
+app_gc_type: G1GC
+
+# Service Configuration
+service_type: api-server
+service_role: payment-processor
+service_function: transaction-handling
+primary_service: payment-api
+backup_services: ['fraud-detection', 'notification-service']
+dependencies: ['postgresql', 'redis', 'kafka']
+upstream_services: ['customer-api', 'merchant-api']
+downstream_services: ['accounting-service', 'audit-log']
+
+# Database Configuration
+db_type: postgresql
+db_version: 14.9
+db_host: postgres-primary.internal.example.com
+db_port: 5432
+db_name: payment_db
+db_pool_size: 50
+db_timeout: 30
+db_replica_hosts: ['postgres-replica-01', 'postgres-replica-02']
+db_backup_enabled: true
+db_backup_schedule: '0 2 * * *'
+
+# Cache Configuration
+cache_type: redis
+cache_version: 7.0.12
+cache_host: redis-cluster.internal.example.com
+cache_port: 6379
+cache_cluster_mode: true
+cache_max_memory: 2gb
+cache_eviction_policy: allkeys-lru
+cache_ttl_default: 3600
+
+# Message Queue Configuration
+mq_type: kafka
+mq_version: 3.5.1
+mq_brokers: ['kafka-01:9092', 'kafka-02:9092', 'kafka-03:9092']
+mq_topics: ['payment.events', 'payment.dlq', 'audit.logs']
+mq_consumer_group: payment-api-consumers
+mq_partition_count: 12
+mq_replication_factor: 3
+
+# Load Balancer Configuration
+lb_type: alb
+lb_name: payment-api-alb
+lb_dns: api.example.com
+lb_target_group: payment-api-tg
+lb_health_check_path: /actuator/health
+lb_health_check_interval: 30
+lb_healthy_threshold: 2
+lb_unhealthy_threshold: 3
+
+# Auto Scaling Configuration
+asg_name: payment-api-asg
+asg_min_size: 4
+asg_max_size: 20
+asg_desired_capacity: 8
+asg_cooldown: 300
+asg_health_check_type: ELB
+asg_health_check_grace_period: 180
+
+# Monitoring Configuration
+monitoring_enabled: true
+metrics_port: 9090
+metrics_path: /actuator/prometheus
+log_level: INFO
+log_format: json
+log_output: ['file', 'stdout', 'cloudwatch']
+log_retention_days: 30
+log_file_path: /var/log/payment-api/application.log
+log_max_size: 100MB
+log_max_backups: 10
+
+# APM Configuration
+apm_enabled: true
+apm_provider: datadog
+apm_agent_version: 1.23.0
+apm_service_name: payment-api
+apm_env: production
+apm_trace_sample_rate: 0.1
+apm_profiling_enabled: true
+
+# Alert Configuration
+alerting_enabled: true
+alert_channels: ['slack', 'pagerduty', 'email']
+alert_slack_webhook: https://hooks.slack.com/services/xxx
+alert_pagerduty_key: abc123xyz
+alert_email_recipients: ['ops-team@example.com', 'dev-team@example.com']
+alert_critical_threshold: 5
+alert_warning_threshold: 10
+
+# Security Configuration
+security_groups: ['sg-web', 'sg-app', 'sg-db-client']
+iam_role: payment-api-role
+iam_instance_profile: payment-api-instance-profile
+encryption_enabled: true
+encryption_kms_key: arn:aws:kms:us-east-1:123456789012:key/abc-123
+ssl_cert_arn: arn:aws:acm:us-east-1:123456789012:certificate/xyz-789
+ssl_protocols: ['TLSv1.2', 'TLSv1.3']
+firewall_rules_count: 47
+
+# Compliance Configuration
+compliance_frameworks: ['PCI-DSS', 'SOC2', 'GDPR']
+compliance_scan_enabled: true
+compliance_last_scan: '2025-09-28T14:30:00Z'
+compliance_status: compliant
+audit_logging_enabled: true
+audit_log_retention: 90
+
+# Backup Configuration
+backup_enabled: true
+backup_type: automated
+backup_schedule: '0 3 * * *'
+backup_retention_days: 30
+backup_storage: s3://payment-api-backups/
+backup_encryption: true
+backup_cross_region: true
+backup_target_region: us-west-2
+
+# Deployment Configuration
+deployment_method: blue-green
+deployment_tool: spinnaker
+deployment_pipeline: payment-api-prod
+deployment_approval_required: true
+deployment_approvers: ['tech-lead', 'ops-manager']
+deployment_last_date: '2025-09-25T10:15:30Z'
+deployment_frequency: weekly
+deployment_success_rate: 98.5
+
+# Feature Flags
+feature_flags_enabled: true
+feature_flag_provider: launchdarkly
+feature_new_payment_flow: true
+feature_3ds_verification: true
+feature_fraud_ml_model: false
+feature_instant_refunds: true
+feature_multi_currency: true
+
+# Rate Limiting
+rate_limit_enabled: true
+rate_limit_requests_per_second: 1000
+rate_limit_burst: 2000
+rate_limit_strategy: token-bucket
+rate_limit_redis_key_prefix: 'ratelimit:payment'
+
+# Circuit Breaker Configuration
+circuit_breaker_enabled: true
+circuit_breaker_failure_threshold: 50
+circuit_breaker_timeout: 60
+circuit_breaker_half_open_requests: 3
+circuit_breaker_sleep_window: 30
+
+# Timeout Configuration
+timeout_connection: 5
+timeout_read: 30
+timeout_write: 30
+timeout_idle: 300
+
+# Thread Pool Configuration
+thread_pool_core_size: 20
+thread_pool_max_size: 100
+thread_pool_queue_capacity: 500
+thread_pool_keep_alive: 60
+
+# Region and Availability
+aws_region: us-east-1
+aws_availability_zone: us-east-1a
+datacenter: aws-us-east-1
+rack: rack-23
+physical_location: 'Ashburn, VA'
+
+# Cost Allocation Tags
+cost_center: engineering
+business_unit: payments
+project_code: PMNT-2024
+budget_owner: product-team
+environment_type: production
+resource_owner: ops-team
+
+# SLA Configuration
+sla_target_uptime: 99.99
+sla_target_latency_p95: 200
+sla_target_latency_p99: 500
+sla_error_rate_threshold: 0.1
+sla_current_uptime: 99.97
+sla_breach_count_month: 0
+
+# Maintenance Windows
+maintenance_window_day: Sunday
+maintenance_window_time: '02:00-04:00'
+maintenance_window_timezone: UTC
+maintenance_frequency: monthly
+maintenance_next_scheduled: '2025-10-06T02:00:00Z'
+
+# Custom Application Metadata
+transaction_types: ['purchase', 'refund', 'authorization', 'capture']
+supported_payment_methods: ['credit_card', 'debit_card', 'wallet', 'bank_transfer']
+supported_currencies: ['USD', 'EUR', 'GBP', 'JPY', 'KRW']
+max_transaction_amount: 50000
+min_transaction_amount: 1
+daily_transaction_limit: 1000000
+
+# Performance Metrics
+avg_response_time_ms: 145
+requests_per_minute: 4500
+error_rate_percent: 0.05
+cpu_usage_percent: 45
+memory_usage_percent: 62
+disk_usage_percent: 38
+network_in_mbps: 120
+network_out_mbps: 95
+
+# Team and Ownership
+team_name: payments-platform
+team_slack_channel: '#team-payments'
+oncall_primary: john.doe@example.com
+oncall_secondary: jane.smith@example.com
+tech_lead: alex.johnson@example.com
+product_owner: sarah.williams@example.com
+scrum_master: mike.brown@example.com
+
+# Documentation Links
+documentation_url: https://wiki.example.com/payments-api
+runbook_url: https://runbook.example.com/payment-api
+architecture_diagram: https://diagrams.example.com/payment-api-v3
+api_documentation: https://api-docs.example.com/payment-api
+
+# CI/CD Configuration
+ci_tool: jenkins
+ci_pipeline_url: https://jenkins.example.com/job/payment-api-prod
+cd_tool: spinnaker
+cd_pipeline_url: https://spinnaker.example.com/applications/payment-api
+artifact_repository: artifactory
+docker_registry: ecr.us-east-1.amazonaws.com
+image_name: payment-api
+image_tag: 3.4.2-b1245
+
+# Container Configuration
+container_runtime: docker
+container_orchestration: kubernetes
+k8s_namespace: payment-production
+k8s_deployment: payment-api-deployment
+k8s_service: payment-api-service
+k8s_replicas: 8
+k8s_cpu_request: 1000m
+k8s_cpu_limit: 2000m
+k8s_memory_request: 2Gi
+k8s_memory_limit: 4Gi
+
+# Last Updated
+grains_last_updated: '2025-10-02T02:41:27.004680'
+grains_version: 2.1
+configuration_version: 47
+schema_version: 3.0
