@@ -11,16 +11,6 @@ kernel: Linux
 kernelrelease: 5.15.0-89-generic
 kernelversion: '#99-Ubuntu SMP Mon Oct 30 20:42:41 UTC 2023'
 
-# Hardware Information
-num_cpus: 8
-cpu_model: Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz
-mem_total: 16384
-virtual: kvm
-manufacturer: Amazon EC2
-productname: t3.xlarge
-serialnumber: ec2-instance-12345
-uuid: ec2a1b2c-3d4e-5f6a-7b8c-9d0e1f2a3b4c
-
 # Network Configuration
 fqdn: web-server-01.prod.example.com
 host: web-server-01
