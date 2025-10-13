@@ -274,9 +274,3 @@ grains_monitor:
     - /var/log/syslog
     - /etc/systemd/system/grains-monitor.service
   last_commit_hash: "a14bdf2"
-
-# ---- Randomized dummy extension data (for length realism) ----
-custom_data:
-{% for i in range(1, 151) %}
-  key_{{ "%03d" % i }}: "value_{{ i }}"
-{% endfor %}
