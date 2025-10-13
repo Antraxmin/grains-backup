@@ -262,15 +262,7 @@ metrics:
   context_switches: 12834
   uptime_seconds: 489023
 
-# ---- Salt Custom Grains ----
-grains_monitor:
-  version: "2.0.1"
-  last_sync: "2025-10-13T09:12:00Z"
-  backup_enabled: true
-  dooray_webhook_enabled: true
-  git_push_status: "success"
-  monitored_files:
-    - /etc/salt/grains
-    - /var/log/syslog
-    - /etc/systemd/system/grains-monitor.service
-  last_commit_hash: "a14bdf2"
+custom_data:
+{% for i in range(1, 151) %}
+  key_{{ "%03d" % i }}: "value_{{ i }}"
+{% endfor %}
