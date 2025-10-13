@@ -1,1 +1,282 @@
-test: 1759396981
+# ===============================
+# Dummy grains for test simulation
+# ===============================
+
+id: test-minion-01
+host: "devnode-ubuntu22"
+fqdn: "devnode-ubuntu22.local"
+os: "Ubuntu"
+osrelease: "22.04"
+osfinger: "Ubuntu-22.04"
+kernel: "Linux"
+kernelrelease: "6.8.0-36-generic"
+kernelversion: "#1 SMP PREEMPT_DYNAMIC"
+machine_id: "6a1b342e9d6a44f38d77a2f927dfcb82"
+num_cpus: 8
+cpu_model: "Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz"
+mem_total: 16384
+swap_total: 2048
+virtual: "kvm"
+biosversion: "1.1.3"
+manufacturer: "QEMU"
+productname: "Standard PC (Q35 + ICH9, 2009)"
+serialnumber: "52-54-00-12-34-56"
+saltversion: "3007.1"
+saltpath: "/usr/lib/python3/dist-packages/salt"
+timezone: "Asia/Seoul"
+pythonversion:
+  - 3
+  - 10
+  - 12
+  - final
+  - 0
+
+# ---- Network Info ----
+ip_interfaces:
+  eth0:
+    - "10.0.0.11"
+  eth1:
+    - "192.168.122.10"
+ipv4:
+  - "127.0.0.1"
+  - "10.0.0.11"
+ipv6:
+  - "::1"
+  - "fe80::5054:ff:fe12:3456"
+dns:
+  nameservers:
+    - "8.8.8.8"
+    - "8.8.4.4"
+  domain: "localdomain"
+networking:
+  gateway: "10.0.0.1"
+  hostname: "devnode-ubuntu22"
+  fqdn_ip4: "10.0.0.11"
+  interfaces:
+    eth0:
+      hwaddr: "52:54:00:12:34:56"
+      up: true
+      mtu: 1500
+    lo:
+      hwaddr: "00:00:00:00:00:00"
+      up: true
+      mtu: 65536
+
+# ---- Disk Info ----
+disks:
+  sda:
+    size: "120G"
+    model: "QEMU_HARDDISK"
+    partitions:
+      sda1:
+        size: "512M"
+        filesystem: "vfat"
+      sda2:
+        size: "119G"
+        filesystem: "ext4"
+  sdb:
+    size: "200G"
+    model: "QEMU_HARDDISK"
+  nvme0n1:
+    size: "500G"
+    model: "Samsung SSD 970 EVO Plus"
+
+mounts:
+  /:
+    device: "/dev/sda2"
+    fstype: "ext4"
+    opts: "rw,relatime"
+    used_percent: "42%"
+  /boot:
+    device: "/dev/sda1"
+    fstype: "vfat"
+    opts: "rw,relatime"
+    used_percent: "28%"
+  /mnt/data:
+    device: "/dev/sdb"
+    fstype: "xfs"
+    opts: "rw,noatime"
+    used_percent: "7%"
+
+# ---- Cloud / Infra Meta ----
+cloud:
+  provider: "AWS"
+  instance_id: "i-0f2b3a44c29d8d0ff"
+  region: "ap-northeast-2"
+  az: "ap-northeast-2a"
+  account_id: "452173611111"
+  private_ip: "10.0.0.11"
+  public_ip: "3.35.128.25"
+  vpc_id: "vpc-0a1234567abcde890"
+  subnet_id: "subnet-0d9d02f9b12345cde"
+  ami_id: "ami-0a12b3c4d5e6f7a8b"
+  launch_time: "2025-10-10T11:22:33Z"
+  tags:
+    Environment: "staging"
+    Owner: "devops"
+    CostCenter: "CC-1010"
+    Service: "GrainsMonitorTest"
+
+# ---- System ----
+cpu_arch: "x86_64"
+systemd_version: "249"
+packages_installed:
+  - git
+  - jq
+  - curl
+  - python3
+  - salt-minion
+  - systemd
+  - net-tools
+  - vim
+  - docker-ce
+  - nginx
+  - openssh-server
+  - build-essential
+  - nodejs
+  - yarn
+
+services:
+  active:
+    - salt-minion
+    - grains-monitor.path
+    - nginx
+    - ssh
+  disabled:
+    - docker
+    - postgresql
+  failed: []
+
+# ---- Docker / Containers ----
+docker_info:
+  version: "25.0.3"
+  containers_running:
+    - name: "grafana"
+      image: "grafana/grafana:9.4"
+      ports:
+        - "3000:3000"
+      status: "running"
+    - name: "redis"
+      image: "redis:7.0"
+      ports:
+        - "6379:6379"
+      status: "running"
+  volumes:
+    - "/var/lib/docker/volumes/grafana_data"
+    - "/var/lib/docker/volumes/redis_data"
+  networks:
+    - "bridge"
+    - "monitoring"
+
+# ---- Kubernetes Node Info ----
+kubelet:
+  node_name: "devnode-ubuntu22"
+  cluster: "staging-cluster"
+  version: "v1.30.1"
+  kube_proxy_mode: "ipvs"
+  taints:
+    - key: "dedicated"
+      value: "test"
+      effect: "NoSchedule"
+  labels:
+    node-role.kubernetes.io/worker: ""
+    topology.kubernetes.io/zone: "ap-northeast-2a"
+    environment: "staging"
+  resources:
+    cpu_allocatable: "7500m"
+    memory_allocatable: "15000Mi"
+    pods_allocatable: 110
+
+# ---- Monitoring Agents ----
+agents:
+  telegraf:
+    version: "1.28.2"
+    status: "running"
+    plugins:
+      - cpu
+      - mem
+      - disk
+      - network
+  node_exporter:
+    version: "1.6.1"
+    status: "running"
+  salt_beacon:
+    enabled: true
+    paths_monitored:
+      - /etc/salt/grains
+      - /etc/systemd/system/
+
+# ---- Custom Application Info ----
+app_stack:
+  project: "GrainsMonitor"
+  version: "1.0.0"
+  deploy_method: "SaltStack"
+  components:
+    - salt-master
+    - salt-minion
+    - reactor
+    - dooray-webhook
+  last_update: "2025-10-10T11:40:00Z"
+  git_repo: "https://github.com/Antraxmin/grains-backup"
+  build_hash: "7b1f4ac"
+  env:
+    DEBUG: false
+    LOG_LEVEL: "info"
+    BACKUP_PATH: "/var/salt/grains-backup"
+    API_ENDPOINT: "https://api.internal.monitor.local"
+    DOORAY_WEBHOOK: "https://nhnent.dooray.com/services/.../TQ0PuxJiS5yQYAJwVGn4TA"
+
+# ---- Security ----
+selinux: "disabled"
+firewall:
+  ufw: "inactive"
+  rules:
+    allow:
+      - "22/tcp"
+      - "443/tcp"
+      - "80/tcp"
+    deny:
+      - "23/tcp"
+      - "25/tcp"
+users:
+  root:
+    uid: 0
+    shell: "/bin/bash"
+  ubuntu:
+    uid: 1000
+    groups:
+      - sudo
+      - docker
+    home: "/home/ubuntu"
+
+# ---- Custom Metrics (for load simulation) ----
+metrics:
+  cpu_usage_percent: 27.3
+  mem_usage_percent: 64.8
+  disk_usage_percent_root: 42.1
+  net_in_kbps: 324.2
+  net_out_kbps: 298.7
+  io_read_kbps: 512.3
+  io_write_kbps: 482.1
+  process_count: 214
+  context_switches: 12834
+  uptime_seconds: 489023
+
+# ---- Salt Custom Grains ----
+grains_monitor:
+  version: "2.0.1"
+  last_sync: "2025-10-13T09:12:00Z"
+  backup_enabled: true
+  dooray_webhook_enabled: true
+  git_push_status: "success"
+  monitored_files:
+    - /etc/salt/grains
+    - /var/log/syslog
+    - /etc/systemd/system/grains-monitor.service
+  last_commit_hash: "a14bdf2"
+
+# ---- Randomized dummy extension data (for length realism) ----
+custom_data:
+{% for i in range(1, 151) %}
+  key_{{ "%03d" % i }}: "value_{{ i }}"
+{% endfor %}
