@@ -261,8 +261,3 @@ metrics:
   process_count: 214
   context_switches: 12834
   uptime_seconds: 489023
-
-custom_data:
-{% for i in range(1, 151) %}
-  key_{{ "%03d" % i }}: "value_{{ i }}"
-{% endfor %}
