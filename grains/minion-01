@@ -234,11 +234,4 @@ firewall:
     allow:
       - "22/tcp"
       - "443/tcp"
-      - "80/tcp"
-    deny:
-      - "23/tcp"
-      - "25/tcp"
-users:
-  root:
-    uid: 0
-    shell: "/bin/bash"
+      - "80/tcp""
