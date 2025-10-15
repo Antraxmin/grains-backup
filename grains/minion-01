@@ -219,19 +219,3 @@ app_stack:
   last_update: "2025-10-10T11:40:00Z"
   git_repo: "https://github.com/Antraxmin/grains-backup"
   build_hash: "7b1f4ac"
-  env:
-    DEBUG: false
-    LOG_LEVEL: "info"
-    BACKUP_PATH: "/var/salt/grains-backup"
-    API_ENDPOINT: "https://api.internal.monitor.local"
-    DOORAY_WEBHOOK: "https://nhnent.dooray.com/services/.../TQ0PuxJiS5yQYAJwVGn4TA"
-
-# ---- Security ----
-selinux: "disabled"
-firewall:
-  ufw: "inactive"
-  rules:
-    allow:
-      - "22/tcp"
-      - "443/tcp"
-      - "80/tcp""
