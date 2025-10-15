@@ -242,22 +242,3 @@ users:
   root:
     uid: 0
     shell: "/bin/bash"
-  ubuntu:
-    uid: 1000
-    groups:
-      - sudo
-      - docker
-    home: "/home/ubuntu"
-
-# ---- Custom Metrics (for load simulation) ----
-metrics:
-  cpu_usage_percent: 27.3
-  mem_usage_percent: 64.8
-  disk_usage_percent_root: 42.1
-  net_in_kbps: 324.2
-  net_out_kbps: 298.7
-  io_read_kbps: 512.3
-  io_write_kbps: 482.1
-  process_count: 214
-  context_switches: 12834
-  uptime_seconds: 489023
