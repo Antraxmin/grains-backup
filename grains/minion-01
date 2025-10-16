@@ -197,6 +197,3 @@ agents:
       - mem
       - disk
       - network
-  node_exporter:
-    version: "1.6.1"
-    status: "running"
