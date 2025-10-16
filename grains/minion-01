@@ -105,7 +105,6 @@ cloud:
     Environment: "staging"
     Owner: "devops"
     CostCenter: "CC-1010"
-    Service: "GrainsMonitorTest"
 
 # ---- System ----
 cpu_arch: "x86_64"
@@ -118,8 +117,7 @@ packages_installed:
   - salt-minion
   - systemd
   - nginx
-  - openssh-server
-  - build-essential
+
 
 # ---- Docker / Containers ----
 docker_info:
