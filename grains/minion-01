@@ -182,8 +182,3 @@ kubelet:
     node-role.kubernetes.io/worker: ""
     topology.kubernetes.io/zone: "ap-northeast-2a"
     environment: "staging"
-  resources:
-    cpu_allocatable: "7500m"
-    memory_allocatable: "15000Mi"
-    pods_allocatable: 110
-k
