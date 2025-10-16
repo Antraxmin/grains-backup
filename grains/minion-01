@@ -161,6 +161,3 @@ docker_info:
       ports:
         - "6379:6379"
       status: "running"
-  volumes:
-    - "/var/lib/docker/volumes/grafana_data"
-    - "/var/lib/docker/volumes/redis_data"
