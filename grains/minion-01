@@ -133,8 +133,6 @@ packages_installed:
   - nginx
   - openssh-server
   - build-essential
-  - nodejs
-  - yarn
 
 # ---- Docker / Containers ----
 docker_info:
