@@ -130,9 +130,6 @@ packages_installed:
   - net-tools
   - vim
   - docker-ce
-  - nginx
-  - openssh-server
-  - build-essential
 
 # ---- Docker / Containers ----
 docker_info:
