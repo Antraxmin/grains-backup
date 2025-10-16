@@ -77,9 +77,6 @@ disks:
   sdb:
     size: "200G"
     model: "QEMU_HARDDISK"
-  nvme0n1:
-    size: "500G"
-    model: "Samsung SSD 970 EVO Plus"
 
 mounts:
   /:
