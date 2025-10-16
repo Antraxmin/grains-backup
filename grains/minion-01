@@ -178,7 +178,3 @@ kubelet:
     - key: "dedicated"
       value: "test"
       effect: "NoSchedule"
-  labels:
-    node-role.kubernetes.io/worker: ""
-    topology.kubernetes.io/zone: "ap-northeast-2a"
-    environment: "staging"
