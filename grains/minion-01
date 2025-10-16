@@ -142,10 +142,6 @@ services:
     - grains-monitor.path
     - nginx
     - ssh
-  disabled:
-    - docker
-    - postgresql
-  failed: []
 
 # ---- Docker / Containers ----
 docker_info:
@@ -158,6 +154,3 @@ docker_info:
       status: "running"
     - name: "redis"
       image: "redis:7.0"
-      ports:
-        - "6379:6379"
-      status: "running"
