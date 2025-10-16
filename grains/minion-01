@@ -57,10 +57,6 @@ networking:
       hwaddr: "52:54:00:12:34:56"
       up: true
       mtu: 1500
-    lo:
-      hwaddr: "00:00:00:00:00:00"
-      up: true
-      mtu: 65536
 
 # ---- Disk Info ----
 disks:
@@ -74,9 +70,6 @@ disks:
       sda2:
         size: "119G"
         filesystem: "ext4"
-  sdb:
-    size: "200G"
-    model: "QEMU_HARDDISK"
 
 mounts:
   /:
@@ -124,6 +117,9 @@ packages_installed:
   - python3
   - salt-minion
   - systemd
+  - nginx
+  - openssh-server
+  - build-essential
 
 # ---- Docker / Containers ----
 docker_info:
