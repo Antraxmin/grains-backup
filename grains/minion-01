@@ -186,14 +186,4 @@ kubelet:
     cpu_allocatable: "7500m"
     memory_allocatable: "15000Mi"
     pods_allocatable: 110
-
-# ---- Monitoring Agents ----
-agents:
-  telegraf:
-    version: "1.28.2"
-    status: "running"
-    plugins:
-      - cpu
-      - mem
-      - disk
-      - network
+k
