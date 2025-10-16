@@ -200,22 +200,3 @@ agents:
   node_exporter:
     version: "1.6.1"
     status: "running"
-  salt_beacon:
-    enabled: true
-    paths_monitored:
-      - /etc/salt/grains
-      - /etc/systemd/system/
-
-# ---- Custom Application Info ----
-app_stack:
-  project: "GrainsMonitor"
-  version: "1.0.0"
-  deploy_method: "SaltStack"
-  components:
-    - salt-master
-    - salt-minion
-    - reactor
-    - dooray-webhook
-  last_update: "2025-10-10T11:40:00Z"
-  git_repo: "https://github.com/Antraxmin/grains-backup"
-  build_hash: "7b1f4ac"
