@@ -127,9 +127,6 @@ packages_installed:
   - python3
   - salt-minion
   - systemd
-  - net-tools
-  - vim
-  - docker-ce
 
 # ---- Docker / Containers ----
 docker_info:
