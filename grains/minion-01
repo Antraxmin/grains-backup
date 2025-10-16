@@ -136,13 +136,6 @@ packages_installed:
   - nodejs
   - yarn
 
-services:
-  active:
-    - salt-minion
-    - grains-monitor.path
-    - nginx
-    - ssh
-
 # ---- Docker / Containers ----
 docker_info:
   version: "25.0.3"
