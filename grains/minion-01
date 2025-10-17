@@ -17,8 +17,6 @@ cpu_model: "Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz"
 mem_total: 16384
 swap_total: 2048
 virtual: "kvm"
-biosversion: "1.1.3"
-manufacturer: "QEMU"
 productname: "Standard PC (Q35 + ICH9, 2009)"
 serialnumber: "52-54-00-12-34-56"
 saltversion: "3007.1"
