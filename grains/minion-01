@@ -42,8 +42,6 @@ mounts:
     fstype: "ext4"
     opts: "rw,relatime"
     used_percent: "42%"
-  /boot:
-    device: "/dev/sda1"
 
 # ---- Cloud / Infra Meta ----
 cloud:
