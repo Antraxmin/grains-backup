@@ -82,11 +82,6 @@ mounts:
     fstype: "vfat"
     opts: "rw,relatime"
     used_percent: "28%"
-  /mnt/data:
-    device: "/dev/sdb"
-    fstype: "xfs"
-    opts: "rw,noatime"
-    used_percent: "7%"
 
 # ---- Cloud / Infra Meta ----
 cloud:
