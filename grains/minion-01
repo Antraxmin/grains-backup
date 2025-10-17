@@ -66,10 +66,6 @@ disks:
     partitions:
       sda1:
         size: "512M"
-        filesystem: "vfat"
-      sda2:
-        size: "119G"
-        filesystem: "ext4"
 
 mounts:
   /:
