@@ -22,12 +22,6 @@ serialnumber: "52-54-00-12-34-56"
 saltversion: "3007.1"
 saltpath: "/usr/lib/python3/dist-packages/salt"
 timezone: "Asia/Seoul"
-pythonversion:
-  - 3
-  - 10
-  - 12
-  - final
-  - 0
 
 # ---- Network Info ----
 ip_interfaces:
