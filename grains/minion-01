@@ -99,8 +99,7 @@ cloud:
   public_ip: "3.35.128.25"
   vpc_id: "vpc-0a1234567abcde890"
   subnet_id: "subnet-0d9d02f9b12345cde"
-  ami_id: "ami-0a12b3c4d5e6f7a8b"
-  launch_time: "2025-10-10T11:22:33Z""
+
 
 # ---- System ----
 cpu_arch: "x86_64"
