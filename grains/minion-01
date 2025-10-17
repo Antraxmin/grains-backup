@@ -43,29 +43,6 @@ ipv4:
 ipv6:
   - "::1"
   - "fe80::5054:ff:fe12:3456"
-dns:
-  nameservers:
-    - "8.8.8.8"
-    - "8.8.4.4"
-  domain: "localdomain"
-networking:
-  gateway: "10.0.0.1"
-  hostname: "devnode-ubuntu22"
-  fqdn_ip4: "10.0.0.11"
-  interfaces:
-    eth0:
-      hwaddr: "52:54:00:12:34:56"
-      up: true
-      mtu: 1500
-
-# ---- Disk Info ----
-disks:
-  sda:
-    size: "120G"
-    model: "QEMU_HARDDISK"
-    partitions:
-      sda1:
-        size: "512M"
 
 mounts:
   /:
