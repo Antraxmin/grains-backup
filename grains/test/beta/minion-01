@@ -24,11 +24,6 @@ saltpath: "/usr/lib/python3/dist-packages/salt"
 timezone: "Asia/Seoul"
 
 # ---- Network Info ----
-  - git
-  - jq
-  - curl
-  - python3
-  - salt-minion
   - systemd
   - nginx
 
