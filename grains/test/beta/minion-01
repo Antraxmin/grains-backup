@@ -18,7 +18,3 @@ mem_total: 16384
 swap_total: 2048
 virtual: "kvm"
 productname: "Standard PC (Q35 + ICH9, 2009)"
-serialnumber: "52-54-00-12-34-56"
-saltversion: "3007.1"
-saltpath: "/usr/lib/python3/dist-packages/salt"
-timezone: "Asia/Seoul"
