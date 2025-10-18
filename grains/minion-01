@@ -35,14 +35,6 @@ ipv4:
 ipv6:
   - "::1"
   - "fe80::5054:ff:fe12:3456"
-
-mounts:
-  /:
-    device: "/dev/sda2"
-    fstype: "ext4"
-    opts: "rw,relatime"
-    used_percent: "42%"
-
 # ---- Cloud / Infra Meta ----
 cloud:
   provider: "AWS"
