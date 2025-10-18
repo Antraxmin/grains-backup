@@ -24,10 +24,6 @@ saltpath: "/usr/lib/python3/dist-packages/salt"
 timezone: "Asia/Seoul"
 
 # ---- Network Info ----
-    - name: "grafana"
-      image: "grafana/grafana:9.4"
-      ports:
-        - "3000:3000"
       status: "running"
     - name: "redis"
       image: "redis:7.0"
