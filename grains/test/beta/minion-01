@@ -24,8 +24,6 @@ saltpath: "/usr/lib/python3/dist-packages/salt"
 timezone: "Asia/Seoul"
 
 # ---- Network Info ----
-  - systemd
-  - nginx
 
 
 # ---- Docker / Containers ----
