@@ -24,13 +24,6 @@ saltpath: "/usr/lib/python3/dist-packages/salt"
 timezone: "Asia/Seoul"
 
 # ---- Network Info ----
-ip_interfaces:
-
-
-# ---- System ----
-cpu_arch: "x86_64"
-systemd_version: "249"
-packages_installed:
   - git
   - jq
   - curl
