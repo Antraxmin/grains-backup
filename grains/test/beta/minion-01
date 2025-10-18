@@ -1,0 +1,53 @@
+# ===============================
+# Dummy grains for test simulation
+# ===============================
+
+id: test-minion-01
+host: "devnode-ubuntu22"
+fqdn: "devnode-ubuntu22.local"
+os: "Ubuntu"
+osrelease: "22.04"
+osfinger: "Ubuntu-22.04"
+kernel: "Linux"
+kernelrelease: "6.8.0-36-generic"
+kernelversion: "#1 SMP PREEMPT_DYNAMIC"
+machine_id: "6a1b342e9d6a44f38d77a2f927dfcb82"
+num_cpus: 8
+cpu_model: "Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz"
+mem_total: 16384
+swap_total: 2048
+virtual: "kvm"
+productname: "Standard PC (Q35 + ICH9, 2009)"
+serialnumber: "52-54-00-12-34-56"
+saltversion: "3007.1"
+saltpath: "/usr/lib/python3/dist-packages/salt"
+timezone: "Asia/Seoul"
+
+# ---- Network Info ----
+ip_interfaces:
+
+
+# ---- System ----
+cpu_arch: "x86_64"
+systemd_version: "249"
+packages_installed:
+  - git
+  - jq
+  - curl
+  - python3
+  - salt-minion
+  - systemd
+  - nginx
+
+
+# ---- Docker / Containers ----
+docker_info:
+  version: "25.0.3"
+  containers_running:
+    - name: "grafana"
+      image: "grafana/grafana:9.4"
+      ports:
+        - "3000:3000"
+      status: "running"
+    - name: "redis"
+      image: "redis:7.0"
