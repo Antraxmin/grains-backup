@@ -17,4 +17,4 @@ cpu_model: "Intel(R) Xeon(R) Gold 6226R CPU @ 2.90GHz"
 mem_total: 16384
 swap_total: 2048
 virtual: "kvm"
-productname: "Standard PC (Q35 + ICH9, 2009)"
+iiproductname: "Standard PC (Q35 + ICH9, 2009)"
