@@ -2,3 +2,4 @@ minion_id: minion-01
 region: test
 phase: beta
 test: aaa
+ddd: aaa
