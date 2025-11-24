@@ -1,5 +1,6 @@
+env: prod
 minion_id: minion-01
-region: test
 phase: beta
+region: test
 test: antraxmin
 user: antraxmin
