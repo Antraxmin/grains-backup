@@ -1,4 +1,4 @@
-deploy: helloworld
+deploy: higigi
 env: prod
 minion_id: minion-01
 phase: beta
