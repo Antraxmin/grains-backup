@@ -1,4 +1,4 @@
-deploy: hello
+deploy: helloworld
 generated_at_utc: '2025-10-25T02:35:23Z'
 minion_id: salt-master
 phase: beta
