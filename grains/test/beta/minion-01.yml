@@ -1,4 +1,4 @@
-deploy: prod
+deploy: dev
 env: prod
 minion_id: minion-01
 phase: beta
