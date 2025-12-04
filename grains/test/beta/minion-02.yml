@@ -1,4 +1,4 @@
-deploy: prod
+deploy: antraxmin
 generated_at_utc: '2025-10-25T02:35:23Z'
 minion_id: minion-02
 phase: beta
