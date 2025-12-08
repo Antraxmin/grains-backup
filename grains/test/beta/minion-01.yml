@@ -1,5 +1,5 @@
 'date:': 25-12-08
-deploy: dev
+deploy: cron
 env: prod
 minion_id: minion-01
 phase: beta
