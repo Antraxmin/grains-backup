@@ -3,4 +3,4 @@ minion_id: minion-01
 phase: beta
 region: test
 deploy: prod
-test: test
+hi: hello
