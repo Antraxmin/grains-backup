@@ -1,5 +1,6 @@
 date: 25-12-08
-deploy: dfsifuwefefw
 minion_id: minion-01
 phase: beta
 region: test
+deploy: prod
+test: test
